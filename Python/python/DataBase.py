@@ -11,6 +11,9 @@ class DataBase:
         self.note_table.append(note)
         self.sort_table()
 
+    def remove_note(self, note: Note) -> None:
+        self.note_table.remove(note)
+
     def sort_table(self) -> None:
         size = len(self.note_table)
         for i in range(size):
@@ -30,8 +33,4 @@ class DataBase:
         return output
 
     def select_note(self, page: int, note: int) -> str:
-        output: str = ""
-
-        output += f'{self.note_table[note - 1 + 5 * page]}'
-
-        return output
+        return self.note_table[note - 1 + 5 * page]

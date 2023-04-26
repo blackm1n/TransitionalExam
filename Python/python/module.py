@@ -13,13 +13,20 @@ def add_note(info):
     return "Создание успешно"
 
 
+def delete_note(page, note):
+    db.remove_note(db.select_note(page, note))
+    return "Удаление успешно"
+
+
 def get_page(page):
     message = f'Страница {page + 1}\n{db.select_page(page)}'
     return message
 
 
 def get_note(page, note):
-    return db.select_note(page, note)
+    output: str = ""
+    output += f'{db.select_note(page, note)}'
+    return output
 
 
 def find_unsigned_id(table):
