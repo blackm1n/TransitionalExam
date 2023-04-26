@@ -16,12 +16,12 @@ class DataBase:
 
     def sort_table(self) -> None:
         size = len(self.note_table)
-        for i in range(size):
-            min_index = i
-            for j in range(i + 1, size):
-                if self.note_table[j].note_id < self.note_table[min_index].note_id:
-                    min_index = j
-            self.note_table[i], self.note_table[min_index] = self.note_table[min_index], self.note_table[i]
+        for t in range(size):
+            min_time = t
+            for i in range(t + 1, size):
+                if self.note_table[i].edit_time > self.note_table[min_time].edit_time:
+                    min_time = i
+            self.note_table[t], self.note_table[min_time] = self.note_table[min_time], self.note_table[t]
 
     def select_page(self, page: int) -> str:
         output: str = ""
