@@ -32,7 +32,7 @@ def get_note(page, note):
 def find_unsigned_id(table):
     id_list = []
     for i in table:
-        id_list.append(i.id)
+        id_list.append(i.note_id)
     unsigned_id = 0
     while unsigned_id in id_list:
         unsigned_id += 1
