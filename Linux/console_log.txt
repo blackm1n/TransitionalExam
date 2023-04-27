@@ -1,0 +1,172 @@
+sergey@sergey-Linux:~$ mkdir TransitionalExam
+
+sergey@sergey-Linux:~$ cd TransitionalExam/
+
+sergey@sergey-Linux:~/TransitionalExam$ mkdir "Игрушки для школьников"
+
+sergey@sergey-Linux:~/TransitionalExam$ mkdir "Игрушки для дошколят"
+
+sergey@sergey-Linux:~/TransitionalExam$ ls -al
+
+total 16
+
+drwxrwxr-x  4 sergey sergey 4096 апр 28 01:27  .
+
+drwxr-x--- 17 sergey sergey 4096 апр 28 01:27  ..
+
+drwxrwxr-x  2 sergey sergey 4096 апр 28 01:27 'Игрушки для дошколят'
+
+drwxrwxr-x  2 sergey sergey 4096 апр 28 01:27 'Игрушки для школьников'
+
+sergey@sergey-Linux:~/TransitionalExam$ cd "Игрушки для школьников"/
+
+sergey@sergey-Linux:~/TransitionalExam/Игрушки для школьников$ touch Роботы
+
+sergey@sergey-Linux:~/TransitionalExam/Игрушки для школьников$ touch Конструктор
+
+sergey@sergey-Linux:~/TransitionalExam/Игрушки для школьников$ touch "Настольные игры"
+
+sergey@sergey-Linux:~/TransitionalExam/Игрушки для школьников$ ls -al
+
+total 8
+
+drwxrwxr-x 2 sergey sergey 4096 апр 28 01:28  .
+
+drwxrwxr-x 4 sergey sergey 4096 апр 28 01:27  ..
+
+-rw-rw-r-- 1 sergey sergey    0 апр 28 01:28  Конструктор
+
+-rw-rw-r-- 1 sergey sergey    0 апр 28 01:28 'Настольные игры'
+
+-rw-rw-r-- 1 sergey sergey    0 апр 28 01:28  Роботы
+
+sergey@sergey-Linux:~/TransitionalExam/Игрушки для школьников$ cd ..
+
+sergey@sergey-Linux:~/TransitionalExam$ cd "Игрушки для дошколят"/
+
+sergey@sergey-Linux:~/TransitionalExam/Игрушки для дошколят$ touch "Мягкие игрушки"
+
+sergey@sergey-Linux:~/TransitionalExam/Игрушки для дошколят$ touch Куклы
+
+sergey@sergey-Linux:~/TransitionalExam/Игрушки для дошколят$ touch Машинки
+
+sergey@sergey-Linux:~/TransitionalExam/Игрушки для дошколят$ cd ..
+
+sergey@sergey-Linux:~/TransitionalExam$ mkdir "Имя Игрушки"
+
+sergey@sergey-Linux:~/TransitionalExam$ cp "Игрушки для школьников"/* "Игрушки для дошколят"/* "Имя Игрушки"/
+
+sergey@sergey-Linux:~/TransitionalExam$ mv "Имя Игрушки"/ "Игрушки"/
+
+sergey@sergey-Linux:~/TransitionalExam$ cd Игрушки
+
+sergey@sergey-Linux:~/TransitionalExam/Игрушки$ ls -al
+
+total 8
+
+drwxrwxr-x 2 sergey sergey 4096 апр 28 01:30  .
+
+drwxrwxr-x 5 sergey sergey 4096 апр 28 01:30  ..
+
+-rw-rw-r-- 1 sergey sergey    0 апр 28 01:30  Конструктор
+
+-rw-rw-r-- 1 sergey sergey    0 апр 28 01:30  Куклы
+
+-rw-rw-r-- 1 sergey sergey    0 апр 28 01:30  Машинки
+
+-rw-rw-r-- 1 sergey sergey    0 апр 28 01:30 'Мягкие игрушки'
+
+-rw-rw-r-- 1 sergey sergey    0 апр 28 01:30 'Настольные игры'
+
+-rw-rw-r-- 1 sergey sergey    0 апр 28 01:30  Роботы
+
+sergey@sergey-Linux:~/TransitionalExam/Игрушки$ cd ..
+
+sergey@sergey-Linux:~/TransitionalExam$ sudo snap search opera
+
+Name                 Version       Publisher          Notes    Summary
+
+opera                98.0.4759.15  opera-software✓    -        Fast, secure, easy-to-use browser
+
+opera-beta           98.0.4759.21  opera-software✓    -        Fast and secure web browser
+
+opera-developer      99.0.4780.0   opera-software✓    -        Fast and secure web browser
+
+opera-proxy          1.2.4         snawoot            -        Standalone Opera VPN proxies client.
+
+operator-builder     0.5.0         vmware-tanzu-labs  -        A Kubebuilder plugin to accelerate the development of Kubernetes operators.
+
+contasimple          3.1.0         enriverd           -        Contasimple Desktop
+
+office365webdesktop  0.7.2         rafgui012          -        It is a simple desktop application for Office365 of the web version for linux
+
+xdm-snap             8.0.25        capecrusader-121   -        Experimental Builds Of The XDM Download Manger's Upcoming Version
+
+devoperator          1.7.1         art-hens-teeth     classic  DevOps tools
+
+sergey@sergey-Linux:~/TransitionalExam$ sudo snap install opera
+
+opera 98.0.4759.15 from Opera (opera-software✓) installed
+
+sergey@sergey-Linux:~/TransitionalExam$ sudo snap remove opera
+
+opera removed
+
+sergey@sergey-Linux:~/TransitionalExam$ crontab -e
+
+crontab: installing new crontab
+
+sergey@sergey-Linux:~/TransitionalExam$ crontab -l
+
+# Edit this file to introduce tasks to be run by cron.
+
+# 
+
+# Each task to run has to be defined through a single line
+
+# indicating with different fields when the task will be run
+
+# and what command to run for the task
+
+# 
+
+# To define the time you can provide concrete values for
+
+# minute (m), hour (h), day of month (dom), month (mon),
+
+# and day of week (dow) or use '*' in these fields (for 'any').
+
+# 
+
+# Notice that tasks will be started based on the cron's system
+
+# daemon's notion of time and timezones.
+
+# 
+
+# Output of the crontab jobs (including errors) is sent through
+
+# email to the user the crontab file belongs to (unless redirected).
+
+# 
+
+# For example, you can run a backup of all your user accounts
+
+# at 5 a.m every week with:
+
+# 0 5 * * 1 tar -zcf /var/backups/home.tgz /home/
+
+*/10 * * * * cp /home/sergey/test.txt /home/sergey/test.txt.bak
+
+*/3 * * * * echo OK! > /home/sergey/test.txt
+
+# 
+
+# For more information see the manual pages of crontab(5) and cron(8)
+
+# 
+
+# m h  dom mon dow   command
+
+sergey@sergey-Linux:~/TransitionalExam$ 
+
