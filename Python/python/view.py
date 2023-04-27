@@ -3,8 +3,9 @@ def show_menu() -> int:
     print("Выберите необходимое действие")
     print("1. Добавить заметку")
     print("2. Удалить заметку")
-    print("3. Прочитать заметку")
-    print("4. Закончить работу")
+    print("3. Редактировать заметку")
+    print("4. Прочитать заметку")
+    print("5. Закончить работу")
     return int(input("Введите номер необходимого действия: "))
 
 
@@ -13,6 +14,11 @@ def input_note() -> tuple:
     title: str = input("Название:\n")
     body: str = input("Введите заметку:\n")
     return title, body
+
+
+def edit_note() -> str:
+    body: str = input("Введите заметку:\n")
+    return body
 
 
 def read_note(notes) -> int:

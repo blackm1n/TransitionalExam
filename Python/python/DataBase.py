@@ -1,3 +1,5 @@
+from datetime import datetime
+
 from python.Note import Note
 
 
@@ -13,6 +15,11 @@ class DataBase:
 
     def remove_note(self, note: Note) -> None:
         self.note_table.remove(note)
+
+    def edit_note(self, page: int, note: int, edit: str) -> None:
+        self.note_table[note - 1 + 5 * page].body = edit
+        self.note_table[note - 1 + 5 * page].edit_time = datetime.now()
+        self.sort_table()
 
     def sort_table(self) -> None:
         size = len(self.note_table)

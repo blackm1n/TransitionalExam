@@ -3,7 +3,7 @@ import python.module as m
 
 
 def start():
-    functions = [add_note, (get_notes, 0), (get_notes, 1), end]
+    functions = [add_note, (get_notes, 0), (get_notes, 1), (get_notes, 2), end]
     choice = functions[v.show_menu() - 1]
     if not isinstance(choice, tuple):
         return choice()
@@ -23,6 +23,9 @@ def get_notes(action):
             if action == 0:
                 v.info(m.delete_note(page, note))
             elif action == 1:
+                v.info(m.get_note(page, note))
+                v.info(m.edit_note(page, note, v.edit_note()))
+            elif action == 2:
                 v.info(m.get_note(page, note))
                 v.pause()
         elif note == 6:

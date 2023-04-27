@@ -18,6 +18,11 @@ def delete_note(page, note):
     return "Удаление успешно"
 
 
+def edit_note(page, note, edit):
+    db.edit_note(page, note, edit)
+    return "Изменение успешно"
+
+
 def get_page(page):
     message = f'Страница {page + 1}\n{db.select_page(page)}'
     return message
