@@ -41,3 +41,8 @@ class DataBase:
 
     def select_note(self, page: int, note: int) -> str:
         return self.note_table[note - 1 + 5 * page]
+
+    def export_data(self):
+        output: dict = {"notes": [note.export_data() for note in self.note_table]}
+        print(output)
+        return output
