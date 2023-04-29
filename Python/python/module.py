@@ -19,7 +19,9 @@ def load_data(database):
         data[i] = list(data[i].values())
 
     for note in data:
-        database.append_note(Note(note[0], note[1], note[2], note[3], note[4]))
+        database.append_note(Note(note[0], note[1], note[2],
+                                  datetime.strptime(note[3], '%Y-%m-%d %H:%M:%S.%f'),
+                                  datetime.strptime(note[4], '%Y-%m-%d %H:%M:%S.%f')))
 
 
 db: DataBase = DataBase()

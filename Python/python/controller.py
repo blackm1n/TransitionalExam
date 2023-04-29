@@ -32,7 +32,7 @@ def get_notes(action):
                 v.info(m.get_note(page, note))
                 v.pause()
         elif note == 6:
-            if page != 1:
+            if page != 0:
                 page -= 1
         elif note == 7:
             page += 1
