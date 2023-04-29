@@ -6,7 +6,7 @@ def show_menu() -> int:
     print("3. Редактировать заметку")
     print("4. Прочитать заметку")
     print("5. Закончить работу")
-    return int(input("Введите номер необходимого действия: "))
+    return get_int()
 
 
 def input_note() -> tuple:
@@ -27,7 +27,17 @@ def read_note(notes) -> int:
     print("6. Предыдущая страница")
     print("7. Следующая страница")
     print("8. Вернуться в главное меню")
-    return int(input("Введите номер необходимого действия: "))
+    return get_int()
+
+
+def get_int() -> int:
+    while True:
+        try:
+            num = int(input("Введите номер необходимого действия: "))
+        except:
+            print("Что-то пошло не так, повторите попытку")
+        else:
+            return num
 
 
 def info(message) -> None:
@@ -37,4 +47,4 @@ def info(message) -> None:
 
 def pause() -> None:
     print("\n")
-    input("Введите любое сообщение для продолжения...")
+    input("Введите любое сообщение для продолжения... ")

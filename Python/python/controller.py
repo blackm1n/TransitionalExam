@@ -4,7 +4,10 @@ import python.module as m
 
 def start():
     functions = [add_note, (get_notes, 0), (get_notes, 1), (get_notes, 2), end]
-    choice = functions[v.show_menu() - 1]
+    num = 0
+    while num <= 0 or num > 5:
+        num = v.show_menu()
+    choice = functions[num - 1]
     if not isinstance(choice, tuple):
         return choice()
     else:
@@ -19,7 +22,7 @@ def get_notes(action):
     page = 0
     note = v.read_note(m.get_page(page))
     while note != 8:
-        if note <= 5:
+        if 0 < note <= 5:
             if action == 0:
                 v.info(m.delete_note(page, note))
             elif action == 1:
