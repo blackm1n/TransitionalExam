@@ -15,13 +15,37 @@ public class Controller {
         }
         switch (num) {
             case 1 -> addToy();
-            case 2 -> exit();
+            case 2 -> getToy(0);
+            case 3 -> exit();
         }
     }
 
     private void addToy() {
         view.info(model.addToy(view.inputToy()));
     }
+
+    private void getToy(int action) {
+        int page = 0;
+        int toy = view.showToy(model.getPage(page));
+        while (toy != 8){
+            if (0 < toy && toy < 5) {
+                if (action == 0) {
+                    view.info(model.getToy(page, toy));
+                    view.pause();
+                }
+            }
+            else if (toy == 6) {
+                if (page != 0) {
+                    page--;
+                }
+            }
+            else if (toy == 7) {
+                page++;
+            }
+            toy = view.showToy(model.getPage(page));
+        }
+    }
+
 
     public void exit() {
         System.exit(0);

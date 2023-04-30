@@ -23,7 +23,20 @@ public class Toy {
         this.id = id;
     }
 
+    public String getName() {
+        return this.name;
+    }
+
+    public int getCount() {
+        return this.count;
+    }
+
     public void setWeight(int weight) {
         this.weight = weight;
+    }
+
+    @Override
+    public String toString() {
+        return String.format("ID: %d\nName: %s\nCount: %d\nWeight: %d", this.id, this.name, this.count, this.weight);
     }
 }

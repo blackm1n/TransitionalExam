@@ -6,10 +6,19 @@ import java.util.List;
 
 public class Model {
 
+    ToyCreator toyCreator = new ToyService();
     Shop shop = new Shop();
 
     public String addToy(List<String> data) {
-        shop.addToy(data.get(0), Integer.parseInt(data.get(1)), Integer.parseInt(data.get(2)));
+        shop.addToy(toyCreator.create(data));
         return "Создание успешно";
+    }
+
+    public String getPage(int page) {
+        return String.format("Страница %d\n%s", page + 1, shop.selectPage(page));
+    }
+
+    public String getToy(int page, int toy) {
+        return String.valueOf(shop.selectToy(page, toy));
     }
 }
