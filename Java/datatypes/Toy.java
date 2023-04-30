@@ -31,6 +31,10 @@ public class Toy {
         return this.count;
     }
 
+    public void setCount(int count) {
+        this.count = count;
+    }
+
     public void setWeight(int weight) {
         this.weight = weight;
     }

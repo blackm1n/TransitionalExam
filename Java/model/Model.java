@@ -14,6 +14,11 @@ public class Model {
         return "Создание успешно";
     }
 
+    public String deleteToy(int page, int toy, int count) {
+        shop.removeToy(shop.selectToy(page, toy), count);
+        return "Удаление успешно";
+    }
+
     public String getPage(int page) {
         return String.format("Страница %d\n%s", page + 1, shop.selectPage(page));
     }

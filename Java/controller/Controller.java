@@ -16,7 +16,8 @@ public class Controller {
         switch (num) {
             case 1 -> addToy();
             case 2 -> getToy(0);
-            case 3 -> exit();
+            case 3 -> getToy(1);
+            case 4 -> exit();
         }
     }
 
@@ -30,6 +31,9 @@ public class Controller {
         while (toy != 8){
             if (0 < toy && toy < 5) {
                 if (action == 0) {
+                    view.info(model.deleteToy(page, toy, view.deleteCount()));
+                }
+                else if (action == 1) {
                     view.info(model.getToy(page, toy));
                     view.pause();
                 }

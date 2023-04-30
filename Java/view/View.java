@@ -9,8 +9,9 @@ public class View {
     public int showMenu() {
         System.out.println("\n" + breakLine());
         System.out.println("1. Добавление игрушки");
-        System.out.println("2. Просмотреть игрушки");
-        System.out.println("3. Закончить работу");
+        System.out.println("2. Удаление игрушки");
+        System.out.println("3. Просмотреть игрушки");
+        System.out.println("4. Закончить работу");
         return getInt("Введите номер необходимого действия: ");
     }
 
@@ -21,6 +22,11 @@ public class View {
         data.add(String.valueOf(getInt("Введите количество игрушки: ")));
         data.add(String.valueOf(getInt("Введите вес игрушки (в процентах от 100): ")));
         return data;
+    }
+
+    public int deleteCount(){
+        System.out.println(breakLine());
+        return getInt("Введите количество, которое хотите удалить: ");
     }
 
     public int showToy (String toys) {

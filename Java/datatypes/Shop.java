@@ -17,6 +17,14 @@ public class Shop {
         this.availableToys.add(toy);
     }
 
+    public void removeToy(Toy toy, int count){
+        int i = this.availableToys.indexOf(toy);
+        this.availableToys.get(i).setCount(this.availableToys.get(i).getCount() - count);
+        if (this.availableToys.get(i).getCount() <= 0) {
+            this.availableToys.remove(i);
+        }
+    }
+
     public String selectPage(int page) {
         StringBuilder output = new StringBuilder();
 
