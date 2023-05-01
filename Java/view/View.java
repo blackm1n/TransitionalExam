@@ -10,8 +10,9 @@ public class View {
         System.out.println("\n" + breakLine());
         System.out.println("1. Добавление игрушки");
         System.out.println("2. Удаление игрушки");
-        System.out.println("3. Просмотреть игрушки");
-        System.out.println("4. Закончить работу");
+        System.out.println("3. Изменение игрушки");
+        System.out.println("4. Просмотреть игрушки");
+        System.out.println("5. Закончить работу");
         return getInt("Введите номер необходимого действия: ");
     }
 
@@ -24,9 +25,22 @@ public class View {
         return data;
     }
 
-    public int deleteCount(){
+    public int changeToy() {
         System.out.println(breakLine());
-        return getInt("Введите количество, которое хотите удалить: ");
+        System.out.println("1. Название");
+        System.out.println("2. Количество");
+        System.out.println("3. Вес");
+        return getInt("Введите номер необходимого действия: ");
+    }
+
+    public String getChangeData(int change) {
+        String data = "";
+        switch(change) {
+            case 1 -> data = getString("Введите новое название: ");
+            case 2 -> data = String.valueOf(getInt("Введите новое количество: "));
+            case 3 -> data = String.valueOf(getInt("Введите новый вес: "));
+        }
+        return data;
     }
 
     public int showToy (String toys) {

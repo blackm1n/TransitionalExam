@@ -14,7 +14,7 @@ public class Toy {
     public Toy(String name, int count, int weight) {
         this.name = name;
         this.count = count;
-        this.weight = weight;
+        this.weight = Math.min(weight, 100);
         int id = 0;
         while (idList.contains(id)) {
             id += 1;
@@ -31,6 +31,9 @@ public class Toy {
         return this.count;
     }
 
+    public void setName(String name) {
+        this.name = name;
+    }
     public void setCount(int count) {
         this.count = count;
     }

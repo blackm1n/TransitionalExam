@@ -14,9 +14,14 @@ public class Model {
         return "Создание успешно";
     }
 
-    public String deleteToy(int page, int toy, int count) {
-        shop.removeToy(shop.selectToy(page, toy), count);
+    public String deleteToy(int page, int toy) {
+        shop.removeToy(shop.selectToy(page, toy));
         return "Удаление успешно";
+    }
+
+    public String editToy(int page, int toy, int change, String data) {
+        shop.editToy(shop.selectToy(page, toy), change, data);
+        return "Изменение успешно";
     }
 
     public String getPage(int page) {

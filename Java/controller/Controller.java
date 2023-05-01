@@ -17,7 +17,8 @@ public class Controller {
             case 1 -> addToy();
             case 2 -> getToy(0);
             case 3 -> getToy(1);
-            case 4 -> exit();
+            case 4 -> getToy(2);
+            case 5 -> exit();
         }
     }
 
@@ -31,9 +32,14 @@ public class Controller {
         while (toy != 8){
             if (0 < toy && toy < 5) {
                 if (action == 0) {
-                    view.info(model.deleteToy(page, toy, view.deleteCount()));
+                    view.info(model.deleteToy(page, toy));
                 }
                 else if (action == 1) {
+                    int change = view.changeToy();
+                    String data = view.getChangeData(change);
+                    view.info(model.editToy(page, toy, change, data));
+                }
+                else if (action == 2) {
                     view.info(model.getToy(page, toy));
                     view.pause();
                 }

@@ -17,11 +17,16 @@ public class Shop {
         this.availableToys.add(toy);
     }
 
-    public void removeToy(Toy toy, int count){
+    public void removeToy(Toy toy){
+        this.availableToys.remove(toy);
+    }
+
+    public void editToy(Toy toy, int change, String data) {
         int i = this.availableToys.indexOf(toy);
-        this.availableToys.get(i).setCount(this.availableToys.get(i).getCount() - count);
-        if (this.availableToys.get(i).getCount() <= 0) {
-            this.availableToys.remove(i);
+        switch (change){
+            case 1 -> this.availableToys.get(i).setName(data);
+            case 2 -> this.availableToys.get(i).setCount(Integer.parseInt(data));
+            case 3 -> this.availableToys.get(i).setWeight(Integer.parseInt(data));
         }
     }
 
